@@ -38,7 +38,8 @@ parser.add_argument("-s", "--squirrel-firstrun", {
 // - packaged (usually in production): "path/to/jspaint.exe" "maybe/a/file.png"
 const { isPackaged } = app;
 const args_array = process.argv.slice(isPackaged ? 1 : 2);
-const args = parser.parse_args(args_array);
+// Use parse_known_args to allow Chromium/Electron flags like --ozone-platform=wayland
+const [args] = parser.parse_known_args(args_array);
 
 // After argument parsing that may have exited the app, handle single instance behavior.
 // In other words, the priority is:

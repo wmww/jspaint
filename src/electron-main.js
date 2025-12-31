@@ -75,8 +75,8 @@ if (!got_single_instance_lock) {
 }
 
 app.enableSandbox();
-app.commandLine.appendSwitch("high-dpi-support", 1);
-app.commandLine.appendSwitch("force-device-scale-factor", 1);
+//app.commandLine.appendSwitch("high-dpi-support", 1);
+//app.commandLine.appendSwitch("force-device-scale-factor", 1);
 
 // Reloading and dev tools shortcuts
 const isDev = process.env.ELECTRON_DEBUG === "1" || !isPackaged;
